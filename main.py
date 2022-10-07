@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import slackweb
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 slack = slackweb.Slack(
     url=os.environ["SLACK_WEBHOOK_URL"]
