@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import slackweb
+import os
 
 slack = slackweb.Slack(
-    url="https://hooks.slack.com/services/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"
+    url=os.environ["SLACK_WEBHOOK_URL"]
 )
 
 url = 'https://kinesis-ergo.com/keyboards/advantage360/'
