@@ -21,7 +21,8 @@ def main():
     )
 
     if element[0].text == 'Sold out':
-        slack.notify(text='Advantage 360 is sold out now: ' + url)
+        # slack.notify(text='Advantage 360 is sold out now: ' + url)
+        print('Advantage 360 is sold out now')
     else:
         slack.notify(
             text='💖💖💖💖 Advantage 360 is maybe available now !! check it out: ' + url + ' 💖💖💖💖')
