@@ -33,3 +33,4 @@ jobs:
       - name: EventBridge Rule Settings cron
         run: |
           aws events put-rule --name ${{ secrets.AWS_EVENTBRIDGE_RULE_NAME }} --schedule-expression 'cron(0/10 * * * ? *)'
+          aws events put-targets --rule ${{ secrets.AWS_EVENTBRIDGE_RULE_NAME }} --targets "Id"="1","Arn"="${{ secrets.AWS_LAMBDA_FUNCTION_ARN }}"
