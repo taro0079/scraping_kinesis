@@ -26,6 +26,7 @@ jobs:
       - name: Lambda Build & Update
         run: |
           pip3 install awscli
+          pip3 install -r requirements.txt -t ./lambda
           cd lambda && zip -r packages.zip ./*
           aws lambda update-function-code --function-name ${{ secrets.AWS_LAMBDA_FUNCTION_NAME }} --zip-file fileb://lambda/packages.zip --publish
 
