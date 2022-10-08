@@ -5,6 +5,10 @@ import os
 from dotenv import load_dotenv
 
 
+def lambda_handler(event, context):
+    main()
+
+
 def main():
 
     load_dotenv()
